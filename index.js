@@ -1,3 +1,5 @@
+//created for the learning purpose
+
 import express from "express";
 import dotenv from "dotenv";
 import userRouter from "./src/features/user/user.route.js";
