@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const blogSchema = new mongoose.Schema({
   title: {
@@ -9,10 +9,11 @@ const blogSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  imageURL: {
-    type: String,
+  author: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
   },
-  
 });
 
 export default blogSchema;

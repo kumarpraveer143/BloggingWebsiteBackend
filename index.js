@@ -11,13 +11,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT;
 
-app.use(express.json());
-app.use(cookieParser());
+app.use(express.json()); //to parse the data
+app.use(cookieParser()); //to play with the cookie!
 
-app.use("/api/users", userRouter);
-app.use("/api/blogs", blogRouter);
+app.use("/api/users", userRouter); //complete!
+app.use("/api/blogs", blogRouter); 
 
 app.listen(port, () => {
+  //created server
   connectDB();
   console.log("Server is up at the port", port);
 });

@@ -11,7 +11,7 @@ class UserRepository {
   }
 
   async findUserByEmail(email) {
-    const user = await userModel.findOne({ email }).select("+password");
+    const user = await userModel.findOne({ email: email }).select("+password");
     return user;
   }
 }

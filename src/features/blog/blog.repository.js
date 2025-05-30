@@ -14,6 +14,20 @@ class BlogRepository {
     const blogs = await blogModel.find({});
     return blogs;
   }
+
+  async getMyBlog(id) {
+    const blogs = await blogModel.find({ author: id });
+    return blogs;
+  }
+
+  async updateBlog(blogId, obj) {
+    console.log("testing!");
+    const updatedBlog = await blogModel.findOneAndUpdate({ _id: blogId }, obj, {
+      new: true,
+    });
+
+    return updatedBlog;
+  }
 }
 
 export default BlogRepository;
