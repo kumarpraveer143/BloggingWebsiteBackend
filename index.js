@@ -13,6 +13,7 @@ const port = process.env.PORT;
 
 app.use(express.json()); //to parse the data
 app.use(cookieParser()); //to play with the cookie!
+//contributed by rishi
 
 app.use("/api/users", userRouter); //complete!
 app.use("/api/blogs", blogRouter); 
